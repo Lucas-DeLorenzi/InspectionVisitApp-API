@@ -13,7 +13,7 @@ module.exports = {
     let roles = [{ name: "ADMIN" }, { name: "EMPLOYEE" }]
 
     let users = [
-      { firstName: "Lucas", lastName: "De Lorenzi", email: "lucas@email.com", password: bcrypt.hashSync("123qwe", Number.parseInt(authConfig.rounds)), roleId: "1" },
+      { firstName: "Administrador", lastName: "Administrador", email: "administrador@administrador.com", password: bcrypt.hashSync("123qwe", Number.parseInt(authConfig.rounds)), roleId: "1" },
       { firstName: faker.name.firstName(), lastName: faker.name.lastName(), email: faker.internet.email(), password: bcrypt.hashSync("123qwe", Number.parseInt(authConfig.rounds)), roleId: "2", TeamId: "1" },
       { firstName: faker.name.firstName(), lastName: faker.name.lastName(), email: faker.internet.email(), password: bcrypt.hashSync("123qwe", Number.parseInt(authConfig.rounds)), roleId: "2", TeamId: "2" },
       { firstName: faker.name.firstName(), lastName: faker.name.lastName(), email: faker.internet.email(), password: bcrypt.hashSync("123qwe", Number.parseInt(authConfig.rounds)), roleId: "2", TeamId: "1" }
