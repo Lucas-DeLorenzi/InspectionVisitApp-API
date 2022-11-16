@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "5b873c81-0ee4-41df-a445-58725374f8c8",
+		"name": "InspectionVisitApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Users POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Lucas",
+									"type": "default"
+								},
+								{
+									"key": "lastName",
+									"value": "Suarez",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "lucas@suarez.com",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Jorge Raul",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Perez",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jorge@perez.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123qwe",
+									"type": "text"
+								},
+								{
+									"key": "TeamId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "RoleId",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/users/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/users/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Visits",
+			"item": [
+				{
+					"name": "Get Visits",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GetCurrentVisit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6IkpvcmdlIFJhdWwgUGVyZXoiLCJlbWFpbCI6ImpvcmdlQHBlcmV6LmNvbSIsInJvbGUiOiJFTVBMT1lFRSIsImlhdCI6MTY2ODQ2NzExNywiZXhwIjoxNjY4NTUzNTE3fQ.YOEJuLMbIBukjgtK6jCNEbLvvjegvghaIHkdPP6WpYE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/visits/getcurrent?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"visits",
+								"getcurrent"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Visit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ikx1Y2FzIERlIExvcmVuemkiLCJlbWFpbCI6Imx1Y2FzQGVtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2ODQ2NTQ0MywiZXhwIjoxNjY4NTUxODQzfQ.PSw0Cw-jlWvQvqO_yowz5emA5UzRWgGrhxMpGNNcJ6Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Finish Visit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6IkpvcmdlIFJhdWwgUGVyZXoiLCJlbWFpbCI6ImpvcmdlQHBlcmV6LmNvbSIsInJvbGUiOiJFTVBMT1lFRSIsImlhdCI6MTY2ODQ2NzExNywiZXhwIjoxNjY4NTUzNTE3fQ.YOEJuLMbIBukjgtK6jCNEbLvvjegvghaIHkdPP6WpYE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/visits/finish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"visits",
+								"finish"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ObservedValues",
+			"item": [
+				{
+					"name": "GetObservedValuesByVisit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6IkpvcmdlIFJhdWwgUGVyZXoiLCJlbWFpbCI6ImpvcmdlQHBlcmV6LmNvbSIsInJvbGUiOiJFTVBMT1lFRSIsImlhdCI6MTY2ODQ2NzExNywiZXhwIjoxNjY4NTUzNTE3fQ.YOEJuLMbIBukjgtK6jCNEbLvvjegvghaIHkdPP6WpYE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/observedvalues/byvisit/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"observedvalues",
+								"byvisit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetObservedValuesForCurrentVisit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/observedvalues/getcurrent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"observedvalues",
+								"getcurrent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateObservedValues",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibmFtZSI6IkpvcmdlIFJhdWwgUGVyZXoiLCJlbWFpbCI6ImpvcmdlQHBlcmV6LmNvbSIsInJvbGUiOiJFTVBMT1lFRSIsImlhdCI6MTY2ODQ3MzU1OSwiZXhwIjoxNjY4NTU5OTU5fQ.r35668QsedDyt5UJG-XaD8cUy2N1MDGl3z6ZWNyUtfI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "SubCategoryId",
+									"value": "30",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "true",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "observations",
+									"value": "esta todo ok",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"contentType": "",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/observedvalues/addnew",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"observedvalues",
+								"addnew"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObservedValues PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "SubCategoryId",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "observations",
+									"value": "esta todo ok",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "singIn Post",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
