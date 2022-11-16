@@ -68,7 +68,7 @@ module.exports = {
             if (req.currentUser.Role.name === "EMPLOYEE" && visit) {
                 await Visit.update({
                     finishDate: new Date
-                }, { where: { id: visit.id } })
+                }, { where: { id: visit.id, UserId: req.currentUser.id } })
                 res.status(201).json({ msg: "Visita finalizada con exito!", error: false });
             } else {
                 res.status(401).json({ msg: "No autorizado" })
