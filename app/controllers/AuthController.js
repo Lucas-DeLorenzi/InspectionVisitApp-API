@@ -21,7 +21,7 @@ module.exports = {
             } else {
                 if (bcrypt.compareSync(password, user.password)) {
                     let token = jwt.sign({ id: user.id, name: `${user.firstName} ${user.lastName}`, email: user.email, role: user.Role.name }, authConfig.secret, { expiresIn: authConfig.expires });
-                    res.json({
+                    res.status(200).json({
                         token: token,
                         claims: { name: `${user.firstName} ${user.lastName}`, role: user.Role.name }
                     })
