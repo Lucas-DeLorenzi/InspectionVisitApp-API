@@ -1,4 +1,4 @@
-# InspectionVisitorApp Server - for Prodeman
+# InspectionVisitApp Server - for Prodeman
 
 InspectionVisitApp is a system that provides inspection tools for teams that focus on IT equipment maintenance.
 
