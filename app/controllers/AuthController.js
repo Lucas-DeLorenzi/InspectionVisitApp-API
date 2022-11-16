@@ -22,7 +22,8 @@ module.exports = {
                 if (bcrypt.compareSync(password, user.password)) {
                     let token = jwt.sign({ id: user.id, name: `${user.firstName} ${user.lastName}`, email: user.email, role: user.Role.name }, authConfig.secret, { expiresIn: authConfig.expires });
                     res.json({
-                        token: token
+                        token: token,
+                        claims: { name: `${user.firstName} ${user.lastName}`, role: user.Role.name }
                     })
                 } else {
                     res.status(401).json({ msg: "Ocurrio un error" })
