@@ -2,13 +2,12 @@ const express = require('express')
 const { sequelize } = require('./models/index');
 const cors = require('cors')
 require('dotenv');
-const allowCors = require('./middlewares/allowCors')
 
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.use(cors(allowCors));
+app.options("*", cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
