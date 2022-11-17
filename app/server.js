@@ -1,14 +1,19 @@
 const express = require('express')
 const { sequelize } = require('./models/index');
-const cors = require('cors')
+const cors = require('micro-cors')
 require('dotenv');
 
+function MyApi(req, res) {
+    if (req.method === "OPTIONS") {
+      return res.status(200).end();
+    }
+  }
 
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors(MyApi));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
