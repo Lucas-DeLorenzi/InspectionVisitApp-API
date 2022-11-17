@@ -6,38 +6,47 @@
             "use": "@vercel/node"
         }
     ],
-    "routes": [
+    "headers": [
         {
-            "src": "/(.*)",
-            "headers": {
-                "key": "Access-Control-Allow-Origin",
-                "value": "*"
-            },
-            "dest": "app/server.js"
+            "source": "app/server.js",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=0, must-revalidate"
+                }
+            ]
         },
         {
-            "src": "/(.*)",
-            "headers": {
-                "key": "Access-Control-Allow-Credentials",
-                "value": "true"
-            },
-            "dest": "app/server.js"
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "key": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                }
+            ]
         },
         {
-            "src": "/(.*)",
-            "headers": {
-                "key": "Access-Control-Allow-Methods",
-                "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-            },
-            "dest": "app/server.js"
-        },
-        {
-            "src": "/(.*)",
-            "headers": {
-                "key": "Access-Control-Allow-Headers",
-                "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-            },
-            "dest": "app/server.js"
+            "source": "/:path*",
+            "has": [
+                {
+                    "type": "query",
+                    "key": "authorized"
+                }
+            ],
+            "headers": [
+                {
+                    "key": "x-authorized",
+                    "value": "true"
+                }
+            ]
         }
     ]
 }
