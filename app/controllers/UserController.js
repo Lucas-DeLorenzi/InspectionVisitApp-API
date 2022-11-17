@@ -7,12 +7,12 @@ module.exports = {
     async getAllUsers(req, res) {
         try {
             // if (req.currentUser.Role.name === "ADMIN") {
-            //     let users = await User.findAll({
-            //         include: {
-            //             model: Team,
-            //             attributes: ["name"]
-            //         }
-            //     });
+                let users = await User.findAll({
+                    include: {
+                        model: Team,
+                        attributes: ["name"]
+                    }
+                });
                 res.status(200).json(users);
             // } else {
             //     res.status(401).json({ msg: "No autorizado" })
