@@ -60,9 +60,9 @@ module.exports = {
 
     await queryInterface.bulkInsert('Roles', roles, {});
     await queryInterface.bulkInsert('Teams', teams, {});
-    await queryInterface.bulkInsert('users', users, {});
-    await queryInterface.bulkInsert('categories', categories, {});
-    await queryInterface.bulkInsert('subCategories', subCategories, {});
+    await queryInterface.bulkInsert('Users', users, {});
+    await queryInterface.bulkInsert('Categories', categories, {});
+    await queryInterface.bulkInsert('SubCategories', subCategories, {});
 
   },
 

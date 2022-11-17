@@ -6,6 +6,7 @@ module.exports = {
   database: process.env.DB_DATABASE || "inspection_visit_app",
   host: process.env.DB_HOST || "localhost",
   dialect: process.env.DB_DIALECT || "mysql",
+  dialectOptions: { port: 5990 },
 
   seederStorage: "json",
   seederStoragePath: "sequelizeSeeds.json",

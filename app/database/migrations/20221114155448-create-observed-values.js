@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('roles', {
+    await queryInterface.createTable('Roles', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -48,7 +48,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: {
-          model: "teams",
+          model: "Teams",
           key: "id"
         }
       },
@@ -56,7 +56,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: "roles",
+          model: "Roles",
           key: "id"
         }
       }
@@ -72,7 +72,7 @@ module.exports = {
         type: Sequelize.STRING
       },
     });
-    await queryInterface.createTable('subCategories', {
+    await queryInterface.createTable('SubCategories', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -86,7 +86,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: "categories",
+          model: "Categories",
           key: "id"
         }
       }
@@ -110,7 +110,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: "users",
+          model: "Users",
           key: "id"
         }
       },
@@ -148,7 +148,7 @@ module.exports = {
         allowNull: false,
         defaultValue: 1,
         references: {
-          model: "users",
+          model: "Users",
           key: "id"
         }
       },
@@ -157,7 +157,7 @@ module.exports = {
         allowNull: false,
         defaultValue: 1,
         references: {
-          model: "subcategories",
+          model: "SubCategories",
           key: "id"
         }
       },
@@ -166,7 +166,7 @@ module.exports = {
         allowNull: false,
         defaultValue: 1,
         references: {
-          model: "visits",
+          model: "Visits",
           key: "id"
         }
       },
@@ -175,10 +175,10 @@ module.exports = {
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('ObservedValues');
     await queryInterface.dropTable('Visits');
-    await queryInterface.dropTable('users');
-    await queryInterface.dropTable('teams');
-    await queryInterface.dropTable('roles');
-    await queryInterface.dropTable('subCategories');
+    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('Teams');
+    await queryInterface.dropTable('Roles');
+    await queryInterface.dropTable('SubCategories');
     await queryInterface.dropTable('Categories');
   }
 };
