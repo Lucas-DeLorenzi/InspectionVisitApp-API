@@ -12,7 +12,8 @@ Install dependencies:
  npm install
 ```
 
-Create, check and set your environment variables:
+Make sure you have a MySql instance in your environment.
+Then create, check and set your environment variables for that instance:
 
 ```console
  touch .env
@@ -47,3 +48,9 @@ Start the server:
  View the server at: http://localhost:3000
 
 <br>
+
+## Deployment on Vercel serverless function:
+
+### https://inspection-visit-app-be.vercel.app
+
+> ** NOTE: Remember that Vercel's serverless functions do not support uploading files from the browser, so uploading images to the ObservedValues endpoint will not work for this demo deployment. **
