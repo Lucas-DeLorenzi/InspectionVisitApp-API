@@ -7,7 +7,12 @@ module.exports = {
   host: process.env.DB_HOST || "localhost",
   dialect: process.env.DB_DIALECT || "mysql",
   dialectModule: require('mysql2'),
-  dialectOptions: { port: 5990 },
+  dialectOptions: {
+    port: 4000, ssl: {
+      minVersion: 'TLSv1.2',
+      rejectUnauthorized: true
+    }
+  },
 
   seederStorage: "json",
   seederStoragePath: "sequelizeSeeds.json",
@@ -15,7 +20,7 @@ module.exports = {
   migrationStorage: "sequelize",
   migrationsStorageTableName: "migrations",
 
-  define:{
+  define: {
     timestamps: false
   }
 }
