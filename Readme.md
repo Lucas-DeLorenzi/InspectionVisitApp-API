@@ -49,7 +49,7 @@ Start the server:
 
 <br>
 
-## Deployment on Vercel serverless function:
+## Deployment on Vercel's serverless function:
 
 ### https://inspection-visit-app-be.vercel.app
 
