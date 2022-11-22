@@ -1,17 +1,16 @@
 require('dotenv').config();
 
+const sslConfig = process.env.DB_DATABASE ? { minVersion: 'TLSv1.2', rejectUnauthorized: true } : null
+
 module.exports = {
   username: process.env.DB_USERNAME || "root",
-  password: process.env.DB_PASSWORD || "null",
+  password: process.env.DB_PASSWORD || "root",
   database: process.env.DB_DATABASE || "inspection_visit_app",
   host: process.env.DB_HOST || "localhost",
   dialect: process.env.DB_DIALECT || "mysql",
   dialectModule: require('mysql2'),
   dialectOptions: {
-    port: 4000, ssl: {
-      minVersion: 'TLSv1.2',
-      rejectUnauthorized: true
-    }
+    port: process.env.DB_PORT || 3306, ssl: sslConfig
   },
 
   seederStorage: "json",
