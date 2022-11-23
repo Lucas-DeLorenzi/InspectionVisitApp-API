@@ -8,6 +8,9 @@ module.exports = {
         try {
             if (req.currentUser.Role.name === "ADMIN") {
                 let users = await User.findAll({
+                    attributes: {
+                        exclude: ['password']
+                    },
                     include: {
                         model: Team,
                         attributes: ["name"]

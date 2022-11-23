@@ -10,7 +10,7 @@ module.exports = {
   dialect: process.env.DB_DIALECT || "mysql",
   dialectModule: require('mysql2'),
   dialectOptions: {
-    port: process.env.DB_PORT || 3306, ssl: sslConfig
+    port: process.env.DB_PORT, ssl: sslConfig || 3306, ssl: sslConfig
   },
 
   seederStorage: "json",
