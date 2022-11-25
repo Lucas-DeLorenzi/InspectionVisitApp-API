@@ -15,7 +15,7 @@ module.exports = {
     ssl: { minVersion: 'TLSv1.2', rejectUnauthorized: true }
     // local mode
     // port: 3306,
-    // ssl: {}
+    // ssl: null
   },
 
   seederStorage: "json",
