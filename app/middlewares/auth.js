@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
 
         jwt.verify(token, authConfig.secret, (err, decoded) => {
             if (err) {
-                res.status(500).json({ msg: "Ha ocurrido un problema al verificar el token", err })
+                res.status(401).json({ msg: "Ha ocurrido un problema al verificar el token", err })
             } else {
                 User.findByPk(decoded.id, { include: { model: Role, attributes: ["name"] } }).then(user => {
                     req.currentUser = user;
